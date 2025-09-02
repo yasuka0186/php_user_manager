@@ -22,6 +22,8 @@ $users = $stmt->fetchAll();
                 <th>名前</th>
                 <th>年齢</th>
                 <th>性別</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +36,12 @@ $users = $stmt->fetchAll();
                     <td>
                         <form action="/editForm.php" method="get">
                             <input type="submit" value="編集">
+                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/userDelete.php" method="post">
+                            <input type="submit" value="削除">
                             <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                         </form>
                     </td>
