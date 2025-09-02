@@ -31,6 +31,12 @@ $users = $stmt->fetchAll();
                     <td><?php echo $user["name"]; ?></td>
                     <td><?php echo $user["age"]; ?></td>
                     <td><?php echo $user["gender"]; ?></td>
+                    <td>
+                        <form action="/editForm.php" method="get">
+                            <input type="submit" value="編集">
+                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
